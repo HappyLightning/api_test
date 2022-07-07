@@ -12,7 +12,7 @@ print(json, '\n')
 norm_json = pd.json_normalize(json).rename(columns= {'regiao.nome':'Regiao', 'nome': 'Qtd. Estados'})
 print(norm_json, '\n')
 qtd_total = norm_json.groupby(['Regiao']).count()# Agrupei pela região e contei as incidências.
-qtd_estados = pd.DataFrame(qtd_total, columns=['Qtd. Estados']) # Para se enquadrar no modelo do CSV.
+qtd_estados = pd.DataFrame(qtd_total, columns=['Qtd. Estados']) # Para se enquadrar no modelo do estados.
 print(qtd_estados, '\n')
-# Criar o CSV
-qtd_estados.to_csv("CSV", sep="|")
+# Criar o estados
+qtd_estados.to_csv("CSV/estados", sep="|")
